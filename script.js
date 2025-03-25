@@ -139,47 +139,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Restrict Access to other browsers
-  document.addEventListener("DOMContentLoaded", function () {
-    const userAgent = navigator.userAgent;
-    const vendor = navigator.vendor;
-    const isChrome = /Chrome/.test(userAgent) && /Google Inc/.test(vendor);
-    const isEdge = /Edg/.test(userAgent); // Block Edge (it’s Chromium-based)
-
-    if (!isChrome || isEdge) {
-      document.body.innerHTML = `
-        <style>
-          body {
-            background-color: #121212;
-            color: white;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-          }
-          .blocked {
-            max-width: 600px;
-            padding: 20px;
-            border-radius: 10px;
-            background: #222;
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-          }
-          a {
-            color: #ffcc00;
-            text-decoration: none;
-            font-weight: bold;
-          }
-        </style>
-        <div class="blocked">
-          <h2>🚫 Access Denied</h2>
-          <p>This website is <b>only accessible on Google Chrome</b>.</p>
-          <p>Please open this page in <a href="https://www.google.com/chrome/" target="_blank">Google Chrome</a>.</p>
-        </div>
-      `;
-    }
-
     // 7. Social Media Icon Hover Animation
     document.querySelectorAll(".social-icons a").forEach(icon => {
         icon.addEventListener("mouseover", () => { icon.style.transform = "rotate(10deg)"; });
