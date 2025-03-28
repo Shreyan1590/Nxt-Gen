@@ -51,49 +51,52 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // 3. Faculty JSON Fetch
     fetch("faculty.json")
-        .then(response => {
-            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-            return response.json();
-        })
-        .then(data => {
-            console.log("Faculty Data Loaded:", data);
-            const facultyList = document.getElementById("faculty-list");
-            facultyList.innerHTML = "";
+    .then(response => {
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        return response.json();
+    })
+    .then(data => {
+        console.log("Faculty Data Loaded:", data);
+        const facultyList = document.getElementById("faculty-list");
+        facultyList.innerHTML = "";
 
-            data.forEach(faculty => {
-                const card = document.createElement("div");
-                card.classList.add("faculty-card");
+        data.forEach(faculty => {
+            const card = document.createElement("div");
+            card.classList.add("faculty-card");
 
-                const imagePath = faculty.image ? faculty.image : "images/default.png";
-                card.innerHTML = `
-                    <div class="faculty-card-inner">
-                        <div class="faculty-card-front">
-                            <div class="faculty-image-container">
-                                <img src="${imagePath}" alt="${faculty.name}" alt="${faculty.position}class="faculty-image">
-                            </div>
-                            <h3>${faculty.name}</h3>
+            // Ensure default image if missing
+            const imagePath = faculty.image && faculty.image.trim() !== "" ? faculty.image : "images/default.png";
+
+            card.innerHTML = `
+                <div class="faculty-card-inner">
+                    <div class="faculty-card-front">
+                        <div class="faculty-image-container">
+                            <img src="${imagePath}" alt="${faculty.name}" class="faculty-image">
                         </div>
-                        <div class="faculty-card-back">
-                            <h3>${faculty.name}</h3>
-                            <h4>${faculty.position}<h4>
-                            <p><strong>Qualification:</strong> ${faculty.qualification}</p>
-                            <p><strong>Experience:</strong> ${faculty.experience}</p>
-                            <p><strong>Industry Exp.:</strong> ${faculty.industry_experience || "N/A"}</p>
-                            <p><strong>Research:</strong> ${faculty.research_focus || "N/A"}</p>
-                            <p><strong>Email:</strong> <a href="mailto:${faculty.email}">${faculty.email}</a></p>
-                            <div class="faculty-links">
-                                ${faculty.linkedin ? `<a href="${faculty.linkedin}" target="_blank">🔗 LinkedIn</a>` : ""}
-                                ${faculty.scopus ? `<a href="${faculty.scopus}" target="_blank">📊 Scopus</a>` : ""}
-                                ${faculty.google_scholar ? `<a href="${faculty.google_scholar}" target="_blank">📚 Google Scholar</a>` : ""}
-                            </div>
+                        <h3>${faculty.name}</h3>
+                        <h4>${faculty.position}</h4>
+                    </div>
+                    <div class="faculty-card-back">
+                        <h3>${faculty.name}</h3>
+                        <h4>${faculty.position}</h4>
+                        <p><strong>Qualification:</strong> ${faculty.qualification}</p>
+                        <p><strong>Experience:</strong> ${faculty.experience}</p>
+                        <p><strong>Industry Exp.:</strong> ${faculty.industry_experience || "N/A"}</p>
+                        <p><strong>Research:</strong> ${faculty.research_focus || "N/A"}</p>
+                        <p><strong>Email:</strong> <a href="mailto:${faculty.email}">${faculty.email}</a></p>
+                        <div class="faculty-links">
+                            ${faculty.linkedin ? `<a href="${faculty.linkedin}" target="_blank">🔗 LinkedIn</a>` : ""}
+                            ${faculty.scopus ? `<a href="${faculty.scopus}" target="_blank">📊 Scopus</a>` : ""}
+                            ${faculty.google_scholar ? `<a href="${faculty.google_scholar}" target="_blank">📚 Google Scholar</a>` : ""}
                         </div>
                     </div>
-                `;
+                </div>
+            `;
 
-                facultyList.appendChild(card);
-            });
-        })
-        .catch(error => console.error("Error loading faculty data:", error));
+            facultyList.appendChild(card);
+        });
+    })
+    .catch(error => console.error("Error loading faculty data:", error));
 
     // 4. Swiper Carousel Initialization
     var swiper = new Swiper(".mySwiper", {
