@@ -522,7 +522,7 @@ h2:hover::after {
 
 /* 🎯 Button Styling */
 .btn-about {
-    display: inline-block;
+    display: flex;
     margin-top: 2vw;
     padding: 1vw 2vw;
     font-size: 1.2vw;
@@ -530,6 +530,7 @@ h2:hover::after {
     color: white;
     background: #ff4500;
     border-radius: 8px;
+    align-items: center;
     text-decoration: none;
     transition: 0.3s ease-in-out;
 }
@@ -735,7 +736,7 @@ h2:hover::after {
 }
 
 .faculty-card-back p {
-    font-size: 13px;
+    font-size: 0.8vw;
     color: #bbb;
     margin-bottom: 10px;
 }
@@ -827,7 +828,7 @@ h2:hover::after {
     }
 
     .faculty-card p {
-        font-size: 13px;
+        font-size: 3vw;
     }
 }
 
