@@ -1,4 +1,5 @@
-[{
+[
+    {
         "name": "Dr. P. Vijayaragavan",
         "position": "Professor and HOD",
         "qualification": "Ph.D (2023)",
@@ -18,7 +19,7 @@
         "experience": "23 Years (Academia)",
         "research_focus": "Quantum Information Processing, Large Language Models, Program Verification",
         "email": "rameshkumark.sse@saveetha.com",
-        "image": "images/Ramesh kumar.jpg"
+        "image": "images/Rameshkumar.jpg"
     },
     {
         "name": "Dr. K. Anita Davamani",

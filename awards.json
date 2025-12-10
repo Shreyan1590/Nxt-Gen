@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "Golden Book of World Records",
+        "description": "Faculty member recognized in the Golden Book of World Records for outstanding contributions to computing research.",
+        "image": "images/Achievements-1.jpg",
+        "year": 2024
+    },
+    {
+        "id": 2,
+        "title": "Best Research Paper Award",
+        "description": "Our research paper on quantum computing received the Best Paper Award at the International Computing Conference.",
+        "image": "images/Achievements-1.jpg",
+        "year": 2024
+    },
+    {
+        "id": 3,
+        "title": "Coyotech Innovation Award",
+        "description": "Department received the Coyotech Innovation Award for excellence in industry-academia collaboration.",
+        "image": "images/Achievements-1.jpg",
+        "year": 2024
+    },
+    {
+        "id": 4,
+        "title": "Student Excellence Recognition",
+        "description": "Students recognized for exceptional performance in AI and machine learning projects.",
+        "image": "images/Achievements-1.jpg",
+        "year": 2024
+    }
+]
