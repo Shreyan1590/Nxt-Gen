@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Dr. P. Vijayaragavan",
+        "position": "Professor and HOD",
+        "qualification": "Ph.D (2023)",
+        "experience": "17 Years (Academia)",
+        "industry_experience": "2 Years (Industry)",
+        "research_focus": "Machine Learning, Artificial Intelligence",
+        "email": "vijayaragavanp.sse@saveetha.com",
+        "linkedin": "https://www.linkedin.com/in/vijayaragavan-p-b8a4a5352/",
+        "scopus": "https://www.scopus.com/authid/detail.uri?authorId=57201197684",
+        "google_scholar": "https://scholar.google.com/citations?hl=en&user=6lbkY0sAAAAJ",
+        "image": "images/Vijayaragavan.jpg"
+    },
+    {
+        "name": "Dr. K. Ramesh Kumar",
+        "position": "Professor",
+        "qualification": "Ph.D (2011)",
+        "experience": "23 Years (Academia)",
+        "research_focus": "Quantum Information Processing, Large Language Models, Program Verification",
+        "email": "rameshkumark.sse@saveetha.com",
+        "image": "images/Ramesh kumar.jpg"
+    },
+    {
+        "name": "Dr. K. Anita Davamani",
+        "position": "Professor",
+        "qualification": "Ph.D (2024)",
+        "experience": "15 Years (Academia)",
+        "research_focus": "Machine Learning & Deep Learning",
+        "email": "anitadavamanik.sse@saveetha.com",
+        "linkedin": "https://www.linkedin.com/in/dr-k-anita-davamani",
+        "scopus": "https://www.scopus.com/authid/detail.uri?authorId=XXXXXXXXX",
+        "google_scholar": "https://scholar.google.com/citations?hl=en&user=XXXXXX",
+        "image": "images/Anita.jpg"
+    },
+    {
+        "name": "Dr. Hemavathi R",
+        "position": "Assistant Professor",
+        "qualification": "Ph.D (2023)",
+        "experience": "9 Years (Academia)",
+        "research_focus": "Big Data Analytics, Machine Learning",
+        "email": "rhemavathi.sse@saveetha.com",
+        "linkedin": "https://www.linkedin.com/in/sai-hema-9480937b/",
+        "scopus": "https://www.scopus.com/authid/detail.uri?authorId=59487338600",
+        "google_scholar": "https://scholar.google.com/citations?view_op=list_works&hl=id&user=snyhrckAAAAJ",
+        "image": "images/Hema.jpg"
+    },
+    {
+        "name": "Dr. Fahad",
+        "position": "Assistant Professor (SG)",
+        "experience": "8+ Years (Academia & Network Administration)",
+        "qualification": "CISCO Faculty Training",
+        "research_focus": "Data Communication, Computer Networks, Circuit Analysis, Electronics",
+        "email": "fahad24in@gmail.com",
+        "linkedin": "#",
+        "scopus": "#",
+        "google_scholar": "#",
+        "image": "images/Fahad.jpg"
+    },
+    {
+        "name": "Dr. K. C. Sharmili",
+        "position": "Assistant Professor (SG)",
+        "qualification": "Ph.D (2019)",
+        "experience": "11 Years (Academia)",
+        "research_focus": "Data Mining, Machine Learning",
+        "email": "sharmilik.sse@saveetha.com",
+        "scopus": "https://www.scopus.com/authid/detail.uri?authorId=57193156783",
+        "google_scholar": "https://scholar.google.com/citations?hl=en&user=EHGxh9IAAAAJ",
+        "orcid": "https://orcid.org/0009-0003-9501-8958",
+        "image": "images/Sharmili.jpg"
+    }
+]
