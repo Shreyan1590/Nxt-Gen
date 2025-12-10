@@ -1,5 +1,4 @@
-[
-    {
+[{
         "name": "Dr. P. Vijayaragavan",
         "position": "Professor and HOD",
         "qualification": "Ph.D (2023)",
@@ -32,6 +31,19 @@
         "scopus": "https://www.scopus.com/authid/detail.uri?authorId=XXXXXXXXX",
         "google_scholar": "https://scholar.google.com/citations?hl=en&user=XXXXXX",
         "image": "images/Anita.jpg"
+    },
+    {
+        "name": "Dr. P. Vijayaragavan",
+        "position": "Professor",
+        "qualification": "Ph.D (2023)",
+        "experience": "17 Years (Academia)",
+        "industry_experience": "2 Years (Industry)",
+        "research_focus": "Machine Learning, Artificial Intelligence",
+        "email": "vijayaragavanp.sse@saveetha.com",
+        "linkedin": "https://www.linkedin.com/in/vijayaragavan-p-b8a4a5352/",
+        "scopus": "https://www.scopus.com/authid/detail.uri?authorId=57201197684",
+        "google_scholar": "https://scholar.google.com/citations?hl=en&user=6lbkY0sAAAAJ",
+        "image": "images/Vijayaragavan.jpg"
     },
     {
         "name": "Dr. Hemavathi R",
