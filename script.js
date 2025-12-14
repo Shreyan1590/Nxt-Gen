@@ -1474,15 +1474,15 @@ const SectionHeader = ({
     
             <div className="hero-stats">
                 <div className="stat-item">
-                <div className="stat-number">10</div>
+                <div className="stat-number">7</div>
                 <div className="stat-label">Expert Faculty</div>
                 </div>
                 <div className="stat-item">
-                <div className="stat-number">500</div>
+                <div className="stat-number">500+</div>
                 <div className="stat-label">Students</div>
                 </div>
                 <div className="stat-item">
-                <div className="stat-number">50</div>
+                <div className="stat-number">50+</div>
                 <div className="stat-label">Research Papers</div>
                 </div>
             </div>
@@ -3538,13 +3538,13 @@ const AIAssistant = () => {
             return 'Hello! How can I assist you today? You can ask me about our research areas, faculty, events, or contact information.';
         }
         if (/about|department|what is/.test(lowerQuery)) {
-            return 'The Department of Nxt-Gen Computing at SIMATS Engineering is dedicated to advancing AI, Machine Learning, Quantum Computing, and cybersecurity research. We have 10+ expert faculty members and 500+ students.';
+            return 'The Department of Nxt-Gen Computing at SIMATS Engineering is dedicated to advancing AI, Machine Learning, Quantum Computing, and cybersecurity research. We have 7 expert faculty members and 500+ students.';
         }
         if (/research|areas|focus/.test(lowerQuery)) {
             return 'Our research focuses on: <br>• Machine Learning<br>• Deep Learning & Neural Networks<br>• Quantum Computing<br>• Large Language Models<br>• Cyber Security<br><br>Would you like to know more about any specific area?';
         }
         if (/faculty|professor|teacher|hod/.test(lowerQuery)) {
-            return 'We have 10+ expert faculty members. The department is headed by <strong>Dr. Vijayaragavan P</strong>. You can view all faculty profiles in the Faculty section.';
+            return 'We have 7 expert faculty members. The department is headed by <strong>Dr. Vijayaragavan P</strong>. You can view all faculty profiles in the Faculty section.';
         }
         if (/contact|email|phone|address/.test(lowerQuery)) {
             return '<strong>Contact Information:</strong><br>• Email: vijayaragavanp.sse@saveetha.com<br>• Phone: +91 95977 46085<br>• Address: SIMATS Engineering, Chennai - 602105';
