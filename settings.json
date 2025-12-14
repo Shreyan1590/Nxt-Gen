@@ -1,0 +1,17 @@
+{
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": false
+    },
+    "html.format.attributeSeparation": "none",
+    "[html]": {
+      "editor.formatOnSave": false
+    },
+    "[jsx]": {
+      "editor.formatOnSave": false
+    },
+    "[javascriptreact]": {
+      "editor.formatOnSave": false
+    }
+  }
+  

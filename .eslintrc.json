@@ -1,0 +1,17 @@
+{
+    "extends": ["next/core-web-vitals"],
+    "rules": {
+      "react/jsx-sort-props": "off",
+      "jsx-quotes": ["error", "prefer-single"],
+      "html/html5-attribute-value-single-quotes": "off"
+    },
+    "overrides": [
+      {
+        "files": ["*.jsx", "*.js"],
+        "rules": {
+          "react/jsx-no-target-blank": "off"
+        }
+      }
+    ]
+  }
+  

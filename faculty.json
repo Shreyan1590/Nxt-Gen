@@ -52,9 +52,6 @@
         "qualification": "CISCO Faculty Training",
         "research_focus": "Data Communication, Computer Networks, Circuit Analysis, Electronics",
         "email": "fahad24in@gmail.com",
-        "linkedin": "#",
-        "scopus": "#",
-        "google_scholar": "#",
         "image": "images/Fahad.jpg"
     },
     {
@@ -68,5 +65,18 @@
         "google_scholar": "https://scholar.google.com/citations?hl=en&user=EHGxh9IAAAAJ",
         "orcid": "https://orcid.org/0009-0003-9501-8958",
         "image": "images/Sharmili.jpg"
+    },
+    {
+        "name": "Dr. C. Anuradha",
+        "position": "Professor",
+        "qualification": "Ph.D (2023)",
+        "experience": "16 Years (Academia)",
+        "research_focus": "Mobile Cloud Computing, Artificial Intelligence",
+        "email": "anuradhac.sse@saveetha.com",
+        "linkedin": "https://www.linkedin.com/in/anuradha-chandramohan-8928319a/",
+        "scopus": "https://www.scopus.com/authid/detail.uri?authorId=56049807400",
+        "google_scholar": "https://scholar.google.com/citations?hl=en&user=HC3giG0AAAAJ&scilu=&scisig=AKwN59oAAAAAaTpeUyWcZXK01aJzLidr1pDMOk0&gmla=AElLoL1zGu1o2qUIRM2og4lJ6iLNoXOfPGqwcWHm0brforu6Ksgu59x9NeFjGkTzN-qZGnvGy3_jBDRjY34pQK-2YY-WRLQhbKnbPuI&sciund=8110741170067103020",
+        "orcid": "https://orcid.org/0009-0003-9501-8958",
+        "image": "images/Anuradha.jpeg"
     }
 ]

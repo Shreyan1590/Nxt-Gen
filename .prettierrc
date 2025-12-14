@@ -1,0 +1,11 @@
+{
+    "htmlWhitespaceSensitivity": "ignore",
+    "attributeGroups": [],
+    "singleAttributePerLine": false,
+    "overrides": [{
+        "files": "*.jsx",
+        "options": {
+            "parser": "babel"
+        }
+    }]
+}
