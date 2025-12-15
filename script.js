@@ -1129,6 +1129,9 @@ const ScrollProgress = () => {
 const Navbar = ({ scrollToSection }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [facultyDropdownOpen, setFacultyDropdownOpen] = useState(false);
+  const [selectedFaculty, setSelectedFaculty] = useState(null);
+  const [facultyData, setFacultyData] = useState([]);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -1137,12 +1140,69 @@ const Navbar = ({ scrollToSection }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Fetch faculty data
+    fetch('faculty.json')
+      .then(res => res.json())
+      .then(data => setFacultyData(data))
+      .catch(err => console.log('Error loading faculty data:', err));
+  }, []);
+
+  useEffect(() => {
+    // Close dropdowns when menu is closed
+    if (!menuOpen) {
+      setFacultyDropdownOpen(false);
+      setSelectedFaculty(null);
+    }
+  }, [menuOpen]);
+
+  useEffect(() => {
+    // Close dropdowns when clicking outside
+    const handleClickOutside = (event) => {
+      if (facultyDropdownOpen && !event.target.closest('.nav-faculty-dropdown')) {
+        setFacultyDropdownOpen(false);
+        setSelectedFaculty(null);
+      }
+    };
+
+    if (facultyDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }
+  }, [facultyDropdownOpen]);
   
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
     setMenuOpen(false);
+    setFacultyDropdownOpen(false);
+    setSelectedFaculty(null);
     // sectionId should be 'home', 'about', etc. (no #)
     scrollToSection(sectionId);
+  };
+
+  const handleFacultyClick = (e) => {
+    e.preventDefault();
+    setFacultyDropdownOpen(!facultyDropdownOpen);
+    if (facultyDropdownOpen) {
+      setSelectedFaculty(null);
+    }
+  };
+
+  const handleFacultyNameClick = (e, faculty) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setSelectedFaculty(selectedFaculty === faculty ? null : faculty);
+  };
+
+  const getFacultyLinks = (faculty) => {
+    const links = [];
+    if (faculty.linkedin) links.push({ name: 'LinkedIn', url: faculty.linkedin });
+    if (faculty.google_scholar) links.push({ name: 'Google Scholar', url: faculty.google_scholar });
+    if (faculty.scopus) links.push({ name: 'Scopus', url: faculty.scopus });
+    if (faculty.orcid) links.push({ name: 'ORCID', url: faculty.orcid });
+    if (faculty.email) links.push({ name: 'Email', url: `mailto:${faculty.email}` });
+    return links;
   };
   
   return (
@@ -1177,12 +1237,43 @@ const Navbar = ({ scrollToSection }) => {
             </span>
           </a>
         </li>
-        <li key="nav-faculty">
-          <a href="#faculty" onClick={(e) => handleNavClick(e, 'faculty')}>
+        <li key="nav-faculty" className="nav-faculty-dropdown">
+          <a href="#faculty" onClick={handleFacultyClick} className={facultyDropdownOpen ? 'active' : ''}>
             <span className="nav-link-title">
               <span data-text="Faculty">Faculty</span>
             </span>
           </a>
+          {facultyDropdownOpen && facultyData.length > 0 && (
+            <ul className="faculty-dropdown">
+              {facultyData.map((faculty, index) => (
+                <li key={`faculty-${index}`} className="faculty-item">
+                  <a 
+                    href="#"
+                    onClick={(e) => handleFacultyNameClick(e, faculty)}
+                    className={selectedFaculty === faculty ? 'active' : ''}
+                  >
+                    {faculty.name}
+                  </a>
+                  {selectedFaculty === faculty && (
+                    <ul className="faculty-deep-dropdown">
+                      {getFacultyLinks(faculty).map((link, linkIndex) => (
+                        <li key={`link-${linkIndex}`}>
+                          <a 
+                            href={link.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            title={link.url}
+                          >
+                            {link.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
         </li>
         <li key="nav-gallery">
           <a href="#gallery" onClick={(e) => handleNavClick(e, 'gallery')}>

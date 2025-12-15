@@ -615,6 +615,171 @@ body.cursor-hidden .cb-cursor-text {
     opacity: 1;
 }
 
+/* Faculty Dropdown Styles */
+.nav-faculty-dropdown {
+    position: relative;
+}
+
+.nav-faculty-dropdown > a.active {
+    color: var(--color-black);
+}
+
+.nav-faculty-dropdown > a.active::after {
+    width: 100%;
+    transform: scaleX(1);
+}
+
+.faculty-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: var(--space-sm);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    min-width: 250px;
+    max-width: 300px;
+    padding: var(--space-xs) 0;
+    list-style: none;
+    z-index: 1001;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: dropdownFadeIn 0.3s ease forwards;
+}
+
+@keyframes dropdownFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.faculty-item {
+    position: relative;
+}
+
+.faculty-dropdown .faculty-item > a {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    color: var(--color-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.faculty-dropdown .faculty-item > a:hover,
+.faculty-dropdown .faculty-item > a.active {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--color-black);
+    border-left-color: var(--color-black);
+}
+
+.faculty-deep-dropdown {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-left: var(--space-xs);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    min-width: 180px;
+    padding: var(--space-xs) 0;
+    list-style: none;
+    z-index: 1002;
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: deepDropdownFadeIn 0.3s ease forwards;
+}
+
+@keyframes deepDropdownFadeIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.faculty-deep-dropdown li {
+    margin: 0;
+}
+
+.faculty-deep-dropdown a {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    color: var(--color-dark);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    position: relative;
+    border-left: 3px solid transparent;
+}
+
+.faculty-deep-dropdown a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--color-black);
+    border-left-color: var(--color-black);
+}
+
+.faculty-deep-dropdown a::after {
+    content: attr(title);
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: var(--space-md);
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--color-black);
+    color: var(--color-bg);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 1003;
+}
+
+.faculty-deep-dropdown a:hover::after {
+    opacity: 1;
+}
+
+/* Mobile styles for dropdown */
+@media (max-width: 768px) {
+    .nav-faculty-dropdown {
+        width: 100%;
+    }
+
+    .faculty-dropdown {
+        position: static;
+        margin-top: var(--space-xs);
+        margin-left: var(--space-md);
+        box-shadow: none;
+        background: rgba(0, 0, 0, 0.02);
+        width: calc(100% - var(--space-md) * 2);
+        max-width: none;
+    }
+
+    .faculty-deep-dropdown {
+        position: static;
+        margin-left: var(--space-md);
+        margin-top: var(--space-xs);
+        box-shadow: none;
+        background: rgba(0, 0, 0, 0.03);
+        width: calc(100% - var(--space-md) * 2);
+        max-width: none;
+    }
+
+    .faculty-deep-dropdown a::after {
+        display: none;
+    }
+
+    .nav-links.active .faculty-dropdown {
+        animation: none;
+    }
+}
+
 .nav-contact {
     font-family: var(--font-body);
     font-size: 0.9rem;
@@ -4396,6 +4561,22 @@ body:has(.event-marquee) .hero {
 .nav-links.active a {
     font-size: 1.5rem;
     font-weight: 500;
+}
+
+.nav-links.active .faculty-dropdown {
+    position: static;
+    margin-top: var(--space-sm);
+    margin-left: 0;
+    width: 100%;
+    max-width: none;
+}
+
+.nav-links.active .faculty-deep-dropdown {
+    position: static;
+    margin-left: var(--space-md);
+    margin-top: var(--space-xs);
+    width: calc(100% - var(--space-md) * 2);
+    max-width: none;
 }
 
 /* ==========================================
